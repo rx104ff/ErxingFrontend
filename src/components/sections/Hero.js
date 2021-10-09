@@ -120,7 +120,7 @@ const Hero = ({
           </div>
           <div className="hero-figure reveal-from-bottom illustration-element-01" data-reveal-value="20px" data-reveal-delay="800">
             <a
-              data-video="https://player.vimeo.com/video/174002812"
+              data-video="https://obj.shine.cn/files/2019/03/01/135c2d0b-1827-4df6-9e1d-a5ea6343b67c_0.mp4"
               href="#0"
               aria-controls="video-modal"
               onClick={openModal}
@@ -137,7 +137,7 @@ const Hero = ({
             id="video-modal"
             show={videoModalActive}
             handleClose={closeModal}
-            video="https://player.vimeo.com/video/174002812"
+            video="https://obj.shine.cn/files/2019/03/01/135c2d0b-1827-4df6-9e1d-a5ea6343b67c_0.mp4"
             videoTag="iframe" />
         </div>
       </div>

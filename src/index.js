@@ -13,7 +13,7 @@ import './assets/scss/style.scss';
 
 const history = createBrowserHistory();
 
-export const API_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8080/api';
+export const API_URL = process.env.REACT_APP_API_BASE_URL || 'http://erxingdogguides.com:8080/api';
 export const ACCESS_TOKEN = 'accessToken';
 export const USERNAME_MIN_LENGTH = 3;
 export const USERNAME_MAX_LENGTH = 15;
