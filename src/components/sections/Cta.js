@@ -31,7 +31,7 @@ const Cta = ({
 
   const [email, setEmail] = useState('');
 
-  //const alert = useAlert();
+  const alert = useAlert();
 
   const outerClasses = classNames(
     'cta section center-content-mobile reveal-from-bottom',
@@ -53,7 +53,9 @@ const Cta = ({
     const subscribeRequest = {email: email};
     subscribe(subscribeRequest)
     .then(response => {
+      alert.success("欢迎加入而行辅助犬社区！");
     }).catch(error => {
+      alert.show("邮件地址已存在");
     })
   };
 

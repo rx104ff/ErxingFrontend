@@ -55,8 +55,6 @@ const Hero = ({
 
   const handleClickedUser = (e) => {
     e.preventDefault();
-
-    console.log("dasdsa");
     
     fetchDocument('adoption_application_form.docx')
         .catch(error => {
@@ -92,7 +90,6 @@ const Hero = ({
         }
     });
   }
-
 
   return (
     <section
