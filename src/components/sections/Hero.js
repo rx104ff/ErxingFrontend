@@ -5,6 +5,7 @@ import ButtonGroup from '../elements/ButtonGroup';
 import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
+import { fetchDocument } from '../../utils/ApiUtils';
 
 const propTypes = {
   ...SectionProps.types
@@ -35,7 +36,7 @@ const Hero = ({
   const closeModal = (e) => {
     e.preventDefault();
     setVideomodalactive(false);
-  }   
+  }
 
   const outerClasses = classNames(
     'hero section center-content',
@@ -52,6 +53,47 @@ const Hero = ({
     bottomDivider && 'has-bottom-divider'
   );
 
+  const handleClickedUser = (e) => {
+    e.preventDefault();
+
+    console.log("dasdsa");
+    
+    fetchDocument('adoption_application_form.docx')
+        .catch(error => {
+            if(error.status === 401) {
+                console.log({
+                    message: 'APP',
+                    description: 'Please login.'
+                });
+            } else {
+                console.log({
+                    message: 'APP',
+                    description: 'Server Error. Please Try Again'
+            });
+        }
+    });
+  }
+
+  const handleClickedHomeStay = (e) => {
+    e.preventDefault();
+    
+    fetchDocument('adoption_application_form.docx')
+        .catch(error => {
+            if(error.status === 401) {
+                console.log({
+                    message: 'APP',
+                    description: 'Please login.'
+                });
+            } else {
+                console.log({
+                    message: 'APP',
+                    description: 'Server Error. Please Try Again'
+            });
+        }
+    });
+  }
+
+
   return (
     <section
       {...props}
@@ -61,19 +103,19 @@ const Hero = ({
         <div className={innerClasses}>
           <div className="hero-content">
             <h1 className="mt-0 mb-16 reveal-from-bottom" data-reveal-delay="200">
-              Landing template for <span className="text-color-primary">startups</span>
+              而行工作犬 <span className="text-color-primary">路上</span>
             </h1>
             <div className="container-xs">
               <p className="m-0 mb-32 reveal-from-bottom" data-reveal-delay="400">
-                Our landing page template works on all devices, so you only have to set it up once, and get beautiful results forever.
+                人生漫漫路，何憾昨日春光未看，挥手向朝歌，来日何几多。
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
-                  <Button tag="a" color="primary" wideMobile href="https://cruip.com/">
-                    Get started
+                  <Button tag="a" color="primary" wideMobile onClick={handleClickedUser}>
+                    使用申请
                     </Button>
-                  <Button tag="a" color="dark" wideMobile href="https://github.com/cruip/open-react-template/">
-                    View on Github
+                  <Button tag="a" color="dark" wideMobile onClick={handleClickedHomeStay}>
+                    寄养申请
                     </Button>
                 </ButtonGroup>
               </div>
@@ -88,7 +130,7 @@ const Hero = ({
             >
               <Image
                 className="has-shadow"
-                src={require('./../../assets/images/video-placeholder.jpg')}
+                src={require('./../../assets/images/about_guid.png')}
                 alt="Hero"
                 width={896}
                 height={504} />

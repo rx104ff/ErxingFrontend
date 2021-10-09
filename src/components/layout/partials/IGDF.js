@@ -1,9 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import Image from '../../elements/Image';
 
-const Logo = ({
+const IGDF = ({
   className,
   ...props
 }) => {
@@ -19,16 +18,16 @@ const Logo = ({
       className={classes}
     >
       <h1 className="m-0">
-        <Link to="/">
+        <a href="https://www.igdf.org.uk/">
           <Image
-            src={require('./../../../assets/images/ex_logo.png')}
+            src={require('./../../../assets/images/igdf.png')}
             alt="Open"
             width={65}
             height={65} />
-        </Link>
+        </a>
       </h1>
     </div>
   );
 }
 
-export default Logo;
+export default IGDF;

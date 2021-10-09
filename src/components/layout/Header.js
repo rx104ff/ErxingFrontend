@@ -105,6 +105,7 @@ const Header = ({
                     'header-nav',
                     isActive && 'is-active'
                   )}>
+                {/**
                 <div className="header-nav-inner">
                   <ul className={
                     classNames(
@@ -124,6 +125,7 @@ const Header = ({
                       </li>
                     </ul>}
                 </div>
+               */}
               </nav>
             </>}
         </div>

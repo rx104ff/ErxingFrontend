@@ -10,6 +10,10 @@
 	margin-bottom: $cta-slogan--padding-v__mobile;
 }
 
+.cta-action {
+display: flex;	clear: none;
+}
+
 @include media( '>medium' ) {
 
 	.cta {
