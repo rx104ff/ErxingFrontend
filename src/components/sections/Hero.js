@@ -56,13 +56,9 @@ const Hero = ({
   const handleClickedUser = (e) => {
     e.preventDefault();
     
-    fetchDocument('adoption_application_form.docx')
+    fetchDocument('guidedog_application_form.pdf')
         .catch(error => {
             if(error.status === 401) {
-                console.log({
-                    message: 'APP',
-                    description: 'Please login.'
-                });
             } else {
                 console.log({
                     message: 'APP',
@@ -75,13 +71,9 @@ const Hero = ({
   const handleClickedHomeStay = (e) => {
     e.preventDefault();
     
-    fetchDocument('adoption_application_form.docx')
+    fetchDocument('homestay_application_form.pdf')
         .catch(error => {
             if(error.status === 401) {
-                console.log({
-                    message: 'APP',
-                    description: 'Please login.'
-                });
             } else {
                 console.log({
                     message: 'APP',

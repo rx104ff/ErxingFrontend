@@ -1,6 +1,6 @@
 import axios from 'axios';
+import { API_URL } from '..';
 
-const API_URL = 'http://erxingdogguides.com:8080/api';
 
 export const USER_NAME_SESSION_ATTRIBUTE_NAME = 'authenticatedUser';
 

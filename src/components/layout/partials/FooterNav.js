@@ -19,7 +19,7 @@ const FooterNav = ({
     >
       <ul className="list-reset">
         <li>
-          <Link to="#0">联系我们</Link>
+          <Link to="/contact">联系我们</Link>
         </li>
         <li>
           <Link>电话: 021-65025199 </Link>
