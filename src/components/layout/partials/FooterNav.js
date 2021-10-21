@@ -25,7 +25,7 @@ const FooterNav = ({
           <Link>电话: 021-65025199 </Link>
         </li>
         <li>
-          <Link>邮箱: erxingdogguides@163.com</Link>
+          <Link>邮箱: dogguides@163.com</Link>
         </li>
       </ul>
     </nav>

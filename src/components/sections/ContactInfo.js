@@ -90,7 +90,7 @@ const ContactInfo = ({
               <div className="tiles-item-inner">
                 <div className="features-tiles-item-content">
                   <p className="m-0 text-sm">
-                    <span className="text-color-primary">邮件</span> erxingdogguides@163.com
+                    <span className="text-color-primary">邮件</span> dogguides@163.com
                   </p>
                 </div>
               </div>

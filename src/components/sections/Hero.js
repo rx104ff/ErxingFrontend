@@ -6,6 +6,8 @@ import Button from '../elements/Button';
 import Image from '../elements/Image';
 import Modal from '../elements/Modal';
 import { fetchDocument } from '../../utils/ApiUtils';
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const propTypes = {
   ...SectionProps.types
@@ -27,6 +29,8 @@ const Hero = ({
 }) => {
 
   const [videoModalActive, setVideomodalactive] = useState(false);
+  const [userModalActive, setUsermoalactive] = useState(false);
+  const [homestayModalActive, setHomestaymodalactive] = useState(false);
 
   const openModal = (e) => {
     e.preventDefault();
@@ -36,6 +40,26 @@ const Hero = ({
   const closeModal = (e) => {
     e.preventDefault();
     setVideomodalactive(false);
+  }
+
+  const openUserModal = (e) => {
+    e.preventDefault();
+    setUsermoalactive(true);
+  }
+
+  const closeUserModal = (e) => {
+    e.preventDefault();
+    setUsermoalactive(false);
+  }
+
+  const openHomeStayModal = (e) => {
+    e.preventDefault();
+    setHomestaymodalactive(true);
+  }
+
+  const closeHomeStayModal = (e) => {
+    e.preventDefault();
+    setHomestaymodalactive(false);
   }
 
   const outerClasses = classNames(
@@ -100,10 +124,8 @@ const Hero = ({
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <ButtonGroup>
-                  <Button tag="a" color="primary" wideMobile onClick={handleClickedUser}>
-                    使用申请
-                    </Button>
-                  <Button tag="a" color="dark" wideMobile onClick={handleClickedHomeStay}>
+                  <Button tag="a" color="primary" wideMobile onClick={openUserModal}>使用申请</Button>
+                  <Button tag="a" color="dark" wideMobile onClick={openHomeStayModal}>
                     寄养申请
                     </Button>
                 </ButtonGroup>
@@ -131,6 +153,58 @@ const Hero = ({
             handleClose={closeModal}
             video="https://obj.shine.cn/files/2019/03/01/135c2d0b-1827-4df6-9e1d-a5ea6343b67c_0.mp4"
             videoTag="iframe" />
+          <Modal 
+            id="download-modal"
+            show={userModalActive}
+            handleClose={closeUserModal}>
+            <h3>
+              使用者申请
+            </h3>
+            <div className="" style={{"textAlign": "left", "margin":"auto", "width": "80%"}}>
+              <ul className="m-0" style={{"textAlign": "left", "margin":"auto"}}>
+                <li className="m-0">
+                  请使用下方链接下载申请表格
+                </li>
+                <li>
+                  提交后，工作人员会主动进行联系。
+                </li>
+                <li>
+                  请确保您填写的信息真实、有效。
+                </li>
+                <li>
+                  申请发送至邮箱: dogguides@163.com
+                </li>
+              </ul>
+            </div>
+            <br/>
+            <Button tag="a" color="primary" wideMobile onClick={handleClickedUser}>下载</Button>
+          </Modal>
+          <Modal 
+            id="download-modal"
+            show={homestayModalActive}
+            handleClose={closeHomeStayModal}>
+            <h3>
+              寄养家庭申请
+            </h3>
+            <div className="" style={{"textAlign": "left", "margin":"auto", "width": "80%"}}>
+              <ul className="m-0" style={{"textAlign": "left", "margin":"auto"}}>
+                <li className="m-0">
+                  请使用下方链接下载申请表格
+                </li>
+                <li>
+                  提交后，工作人员会主动进行联系。
+                </li>
+                <li>
+                  请确保您填写的信息真实、有效。
+                </li>
+                <li>
+                  申请发送至邮箱: dogguides@163.com
+                </li>
+              </ul>
+            </div>
+            <br/>
+            <Button tag="a" color="primary" wideMobile onClick={handleClickedHomeStay}>下载</Button>
+          </Modal>
         </div>
       </div>
     </section>
